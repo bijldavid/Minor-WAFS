@@ -1,7 +1,11 @@
+const puzzle1 = document.querySelector(".puzzle1")
+const puzzle2 = document.querySelector(".puzzle2")
+
 const dragElement = document.getElementById("drag-element");
 const goal = document.getElementById("drag-goal");
-const goalH1 = document.querySelector('#drag-goal h1');
+const goalH1 = document.querySelector('#drag-goal h2');
 const nextButton = document.querySelector('#drag-goal button');
+
 let collisionCount = 0;
 let offsetX
 let offsetY
@@ -9,6 +13,8 @@ let isDragging = false;
 let isColliding = false;
 let dragElementHeight = dragElement.getBoundingClientRect().height;
 let dragElementWidth = dragElement.getBoundingClientRect().width;
+
+
 
 
 dragElement.addEventListener("mousedown", (e) => {
@@ -76,4 +82,7 @@ document.addEventListener("mouseup", () => {
     dragElement.style.cursor = "grab";
 });
 
-
+nextButton.addEventListener("click", (e) => {
+    puzzle1.classList.add("invisible");
+    puzzle2.classList.remove("invisible");
+});
