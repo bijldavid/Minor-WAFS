@@ -3,6 +3,7 @@
 *::after {
     padding: 0;
     margin: 0;
+    box-sizing: border-box;
 }
 
 h1,
@@ -75,12 +76,194 @@ ul {
 }
 
 
-.piano {
-    width: 200px;
-    height: 200px;
+
+
+.puzzle2 {
+    background-color: bisque;
+    display: grid;
+    place-items: center;
+}
+
+.desk {
+    width: 100%;
+    height: 500px;
+    background-color: burlywood;
+    display: grid;
+    grid-template-columns: 1fr max-content 1fr;
+}
+
+.piano-base {
+    position: relative;
+    width: 300px;
+    height: 120px;
+    background-color: rgb(255, 231, 93);
+    border-radius: 10px;
+    outline: solid 3px black;
+    align-self: center;
+}
+
+.keys-area {
+    width: calc(100% - 30px);
+    height: 60px;
     position: absolute;
-    top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%);
-    background-color: yellow;
+    bottom: 0;
+    transform: translateX(-50%);
+    background-color: rgb(64, 64, 64);
+    outline: solid 3px black;
+}
+
+.keys-area .natural-notes {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    gap: 3px;
+}
+
+.keys-area .natural-notes .key {
+    width: 20px;
+    height: 100%;
+    background-color: #efefef;
+}
+
+.keys-area .natural-notes .key:hover {
+    background-color: red;
+}
+
+.keys-area .sharps-and-flats {
+    position: absolute;
+    width: calc(100% - 40px + 6.66px);
+    left: 50%;
+    transform: translateX(-50%);
+    height: 60%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.keys-area .sharps-and-flats .key {
+    width: 10px;
+    height: 100%;
+    background-color: black;
+}
+
+.keys-area .sharps-and-flats .key:hover {
+    background-color: green;
+}
+
+.piano-base .piano-details {
+    position: absolute;
+    height: 60px;
+    width: 100%;
+    top: 0;
+    display: flex;
+}
+
+.piano-base .piano-details .knobs {
+    width: 100%;
+    height: 100%;
+    display: grid;
+    place-items: center;
+}
+
+.piano-base .piano-details .knobs .knob-container {
+    width: 40px;
+    height: 25px;
+    gap: 5px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+.piano-base .piano-details .knobs .knob-container .knob {
+    width: 100%;
+    height: 100%;
+    background-color: rgb(159, 17, 17);
+}
+
+
+.piano-base .piano-details .screens {
+    width: 100%;
+    height: 100%;
+    display: grid;
+    place-items: center;
+}
+
+.piano-base .piano-details .screens .screen {
+    width: 65px;
+    height: 30px;
+    background-color: rgb(147, 204, 240);
+
+}
+
+.piano-base .piano-details .sliders {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+}
+
+.piano-base .piano-details .sliders .slider {
+    width: 3px;
+    height: 30px;
+    background-color: rgb(53, 53, 53);
+    position: relative;
+}
+
+.piano-base .piano-details .sliders .slider::before {
+    position: absolute;
+    content: '';
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 10px;
+    height: 5px;
+    background-color: rgb(255, 64, 0);
+}
+
+.desk .mug {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: rgb(65, 65, 181);
+    display: grid;
+    place-items: center;
+    outline: solid 3px black;
+    justify-self: right;
+    align-self: center;
+    margin-right: 40px;
+}
+
+.desk .mug .coffee {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    background-color: brown;
+    outline: solid 3px black;
+}
+
+.desk .sheets {
+    position: relative;
+    align-self: center;
+}
+
+.desk .sheets .sheet {
+    position: absolute;
+    height: 160px;
+    width: 100px;
+    margin-left: 40px;
+    outline: solid 3px black;
+}
+
+.desk .sheets div:nth-of-type(1) {
+    z-index: 2;
+    background-color: white;
+    transform: rotate(6deg) translateY(-50%);
+}
+
+.desk .sheets div:nth-of-type(2) {
+    z-index: 1;
+    background-color: rgb(237, 237, 237);
+    transform: rotate(20deg) translateY(-70%);
 }
