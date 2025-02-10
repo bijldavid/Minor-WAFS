@@ -1,0 +1,19 @@
+const nextButtonPuzzle2 = document.querySelector(".piano-base button");
+
+const correctSequence = [ "key1", "key2", "key3" ];
+let userInput = [];
+
+document.querySelectorAll(".key").forEach((key) => {
+    key.addEventListener("click", () => {
+        userInput.push(key.id);
+
+        if (userInput[userInput.length - 1] !== correctSequence[userInput.length - 1]) {
+            userInput = [];
+            return
+        }
+
+        if  (userInput.length === correctSequence.length) {
+            nextButtonPuzzle2.classList.remove("invisible");
+        }
+    });
+});

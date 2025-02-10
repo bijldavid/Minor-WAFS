@@ -1,0 +1,85 @@
+.square {
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.objective {
+    width: 150px;
+    height: 150px;
+    left: 33%;
+    display: grid;
+    place-items: center;
+    z-index: 10;
+}
+
+.goal {
+    width: 100px;
+    height: 100px;
+    position: relative;
+    background-color: rgb(165, 95, 42);
+    left: 66%;
+    display: grid;
+    place-items: center;
+    border: solid black;
+    border-width: 0 3px; 
+}
+
+.goal::before {
+    position: absolute;
+    content: '';
+    height: calc(100vh / 2 - 50px);
+    width: 100px;
+    background-color: rgb(165, 95, 42);
+    bottom: 0;
+    transform: translateY(-100px);
+    border: solid black;
+    border-width: 0 3px; 
+}
+
+.goal::after {
+    position: absolute;
+    content: '';
+    height: calc(100vh / 2 - 50px);
+    width: 100px;
+    background-color: rgb(165, 95, 42);
+    top: 0;
+    transform: translateY(100px);
+    border: solid black;
+    border-width: 0 3px; 
+}
+
+.goal button {
+    position: absolute;
+    top: -3em;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.puzzle1 img {
+    height: 100%;
+    width: 100%;
+    pointer-events: none;
+    user-select: none;
+}
+
+.triangle1 {
+    z-index: 10;
+    position: absolute;
+    height: 100px;
+    width: 100px;
+    clip-path: polygon(36% 50%, 0 0, 0 100%);
+    background-color: white;
+    top: 0;
+    margin-left: -7px;
+}
+
+.triangle2 {
+    z-index: 1;
+    position: absolute;
+    height: 100px;
+    width: 100px;
+    clip-path: polygon(36% 50%, 0 0, 0 100%);
+    background-color: black;
+    top: 0;
+}

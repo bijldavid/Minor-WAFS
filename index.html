@@ -5,7 +5,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="styles/general.css">
+    <link rel="stylesheet" href="styles/axe.css">
+    <link rel="stylesheet" href="styles/piano.css">
     <title>WAFS David</title>
 </head>
 
@@ -14,87 +16,99 @@
     <header></header>
 
     <main>
-        <div class="puzzle puzzle1 invisible">
+        <div class="puzzle puzzle1">
 
             <div id="drag-element" class="square objective">
-                <h1>Drag me</h1>
+                <img src="images/axe.png">
             </div>
 
             <div id="drag-goal" class="square goal">
                 <h2>0/5</h2>
                 <button class="invisible">Next</button>
+                <div class="triangle1"></div>
+                <div class="triangle2"></div>
             </div>
         </div>
 
-        <div class="puzzle puzzle2">
-            <div class="desk">
-                <div class="mug">
-                    <div class="coffee"></div>
-                </div>
 
-                <div class="piano-base">
-                    <div class="piano-details">
-                        <div class="knobs">
-                            <div class="knob-container">
-                                <div class="knob"></div>
-                                <div class="knob"></div>
-                                <div class="knob"></div>
-                                <div class="knob"></div>
-                                <div class="knob"></div>
-                                <div class="knob"></div>
+
+
+
+        <div class="puzzle puzzle2 invisible">
+            <div class="room">
+                <div class="desk">
+                    <div class="mug">
+                        <div class="coffee"></div>
+                    </div>
+
+                    <div class="piano-base">
+                        <div class="piano-details">
+                            <div class="knobs">
+                                <div class="knob-container">
+                                    <div class="knob"></div>
+                                    <div class="knob"></div>
+                                    <div class="knob"></div>
+                                    <div class="knob"></div>
+                                    <div class="knob"></div>
+                                    <div class="knob"></div>
+                                </div>
+                            </div>
+                            <div class="screens">
+                                <div class="screen">
+                                    <img src="images/player.png" alt="">
+                                </div>
+                            </div>
+                            <div class="sliders">
+                                <div class="slider"></div>
+                                <div class="slider"></div>
+                                <div class="slider"></div>
+                                <div class="slider"></div>
                             </div>
                         </div>
-                        <div class="screens">
-                            <div class="screen"></div>
+                        <div class="keys-area">
+                            <div class="natural-notes">
+                                <div id="key1" class="key"></div>
+                                <div id="key2" class="key"></div>
+                                <div id="key3" class="key"></div>
+                                <div id="key4" class="key"></div>
+                                <div id="key5" class="key"></div>
+                                <div id="key6" class="key"></div>
+                                <div id="key7" class="key"></div>
+                                <div id="key8" class="key"></div>
+                                <div id="key9" class="key"></div>
+                                <div id="key10" class="key"></div>
+                                <div id="key11" class="key"></div>
+                                <div id="key12" class="key"></div>
+                            </div>
+                            <div class="sharps-and-flats">
+                                <div id="key13" class="key"></div>
+                                <div id="key14" class="key"></div>
+                                <div id="key15" class="key"></div>
+                                <div id="key16" class="key"></div>
+                                <div id="key17" class="key"></div>
+                                <div id="key18" class="key"></div>
+                                <div id="key19" class="key"></div>
+                                <div id="key20" class="key"></div>
+                                <div id="key21" class="key"></div>
+                                <div id="key22" class="key"></div>
+                                <div id="key23" class="key"></div>
+                            </div>
                         </div>
-                        <div class="sliders">
-                            <div class="slider"></div>
-                            <div class="slider"></div>
-                            <div class="slider"></div>
-                            <div class="slider"></div>
-                        </div>
+                        <button class="invisible">Next</button>
                     </div>
-                    <div class="keys-area">
-                        <div class="natural-notes">
-                            <div class="key"></div>
-                            <div class="key"></div>
-                            <div class="key"></div>
-                            <div class="key"></div>
-                            <div class="key"></div>
-                            <div class="key"></div>
-                            <div class="key"></div>
-                            <div class="key"></div>
-                            <div class="key"></div>
-                            <div class="key"></div>
-                            <div class="key"></div>
-                            <div class="key"></div>
-                        </div>
-                        <div class="sharps-and-flats">
-                            <div class="key"></div>
-                            <div class="key"></div>
-                            <div class="key"></div>
-                            <div class="key"></div>
-                            <div class="key"></div>
-                            <div class="key"></div>
-                            <div class="key"></div>
-                            <div class="key"></div>
-                            <div class="key"></div>
-                            <div class="key"></div>
-                            <div class="key"></div>
-                        </div>
-                    </div>
-                </div>
 
-                <div class="sheets">
-                    <div class="sheet"></div>
-                    <div class="sheet"></div>
+                    <div class="sheets">
+                        <div class="sheet"></div>
+                        <div class="sheet"></div>
+                    </div>
                 </div>
             </div>
         </div>
     </main>
 
     <footer></footer>
-    <script src="script.js"></script>
+    <script src="scripts/axe.js"></script>
+    <script src="scripts/piano.js"></script>
 
 </body>
 

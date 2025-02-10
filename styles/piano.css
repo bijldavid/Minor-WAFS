@@ -1,106 +1,39 @@
-*,
-*::before,
-*::after {
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-}
-
-h1,
-h2,
-h3,
-h4,
-p {
-    margin: 0;
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    font-size: medium;
-}
-
-a {
-    text-decoration: none;
-}
-
-ul {
-    padding: 0;
-    margin: 0;
-}
-
-
-
-.invisible {
-    display: none;
-}
-
-
-
-
-.puzzle {
-    width: 100vw;
-    height: 100vh;
-    position: relative;
-}
-
-.square {
-    width: 100px;
-    height: 100px;
-    position: absolute;
-    top: 50%;
-    transform: translate(-50%, -50%);
-}
-
-.objective {
-    background-color: red;
-    left: 33%;
-    display: grid;
-    place-items: center;
-    z-index: 10;
-}
-
-.objective h1 {
-    pointer-events: none;
-}
-
-.goal {
-    background-color: green;
-    left: 66%;
-    display: grid;
-    place-items: center;
-    position: relative;
-}
-
-.goal button {
-    position: absolute;
-    top: -3em;
-    left: 50%;
-    transform: translateX(-50%);
-}
-
-
-
-
 .puzzle2 {
     background-color: bisque;
+}
+
+.room {
+    height: 100%;
+    width: auto;
     display: grid;
     place-items: center;
 }
 
 .desk {
-    width: 100%;
+    width: 80%;
     height: 500px;
     background-color: burlywood;
+    border-radius: 20px;
     display: grid;
     grid-template-columns: 1fr max-content 1fr;
+    transform: rotate(7deg);
 }
 
 .piano-base {
     position: relative;
     width: 300px;
     height: 120px;
-    background-color: rgb(255, 231, 93);
+    background-image: linear-gradient(rgb(255, 241, 188) 5%, rgb(255, 208, 90) 6%);
     border-radius: 10px;
     outline: solid 3px black;
     align-self: center;
+    box-shadow: 10px 10px rgba(43, 22, 10, 0.35);
 }
+
+
+/* ==================== */
+/* PIANO KEYS */
+/* ==================== */
 
 .keys-area {
     width: calc(100% - 30px);
@@ -124,11 +57,11 @@ ul {
 .keys-area .natural-notes .key {
     width: 20px;
     height: 100%;
-    background-color: #efefef;
+    background-color: #fff;
 }
 
 .keys-area .natural-notes .key:hover {
-    background-color: red;
+    background-color: #d3d3d3;
 }
 
 .keys-area .sharps-and-flats {
@@ -148,8 +81,13 @@ ul {
 }
 
 .keys-area .sharps-and-flats .key:hover {
-    background-color: green;
+    background-color: rgb(76, 76, 76);
 }
+
+
+/* ==================== */
+/* PIANO DETAILS */
+/* ==================== */
 
 .piano-base .piano-details {
     position: absolute;
@@ -177,7 +115,7 @@ ul {
 .piano-base .piano-details .knobs .knob-container .knob {
     width: 100%;
     height: 100%;
-    background-color: rgb(159, 17, 17);
+    background-image: linear-gradient(rgb(178, 23, 23) 35%, rgb(117, 18, 18) 36%);
 }
 
 
@@ -191,8 +129,15 @@ ul {
 .piano-base .piano-details .screens .screen {
     width: 65px;
     height: 30px;
-    background-color: rgb(147, 204, 240);
+    background-image: linear-gradient(45deg, rgb(165, 195, 255) 55%, rgb(121, 166, 255) 56%);
+    display: grid;
+    place-items: center;
+}
 
+.piano-base .piano-details .screens .screen img {
+    width: calc(100% - 10px);
+    height: auto;
+    mix-blend-mode: overlay;
 }
 
 .piano-base .piano-details .sliders {
@@ -219,29 +164,90 @@ ul {
     transform: translateX(-50%);
     width: 10px;
     height: 5px;
-    background-color: rgb(255, 64, 0);
+    background-color: rgb(98, 98, 98);
 }
 
+
+/* ==================== */
+/* MUG */
+/* ==================== */
+
 .desk .mug {
+    z-index: 2;
+    position: relative;
     width: 50px;
     height: 50px;
     border-radius: 50%;
-    background-color: rgb(65, 65, 181);
+    background-image: linear-gradient(-45deg, rgb(65, 65, 181) 50%, rgb(128, 128, 255) 51%, rgb(128, 128, 255) 70%, rgb(65, 65, 181) 71%);
     display: grid;
     place-items: center;
     outline: solid 3px black;
     justify-self: right;
     align-self: center;
     margin-right: 40px;
+    box-shadow: 10px 10px rgba(43, 22, 10, 0.35);
+}
+
+.desk .mug::after {
+    z-index: 1;
+    position: absolute;
+    content: '';
+    bottom: calc(37.5px + 3px);
+    left: -3px;
+    height: 10px;
+    width: 5px;
+    background-color: rgb(65, 65, 181);
+    outline: solid 3px black;
+    transform: rotate(-50deg);
 }
 
 .desk .mug .coffee {
+    position: relative;
     width: 35px;
     height: 35px;
     border-radius: 50%;
-    background-color: brown;
+    background-color: rgb(121, 65, 22);
     outline: solid 3px black;
 }
+
+.desk .mug .coffee::before {
+    position: absolute;
+    content: '';
+    top: 7px;
+    right: 10px;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: rgb(165, 95, 41);
+    animation: bubbles 2s infinite;
+}
+
+.desk .mug .coffee::after {
+    position: absolute;
+    content: '';
+    bottom: 10px;
+    left: 5px;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: rgb(165, 95, 41);
+    animation: bubbles 2s infinite;
+    animation-delay: 1s;
+}
+
+@keyframes bubbles {
+    from {
+        transform: scale(0)
+    }
+    to {
+        transform: scale(1);
+    }
+}
+
+
+/* ==================== */
+/* SHEETS */
+/* ==================== */
 
 .desk .sheets {
     position: relative;
@@ -260,10 +266,24 @@ ul {
     z-index: 2;
     background-color: white;
     transform: rotate(6deg) translateY(-50%);
+    box-shadow: 7px 7px rgba(43, 22, 10, 0.35);
 }
 
 .desk .sheets div:nth-of-type(2) {
     z-index: 1;
     background-color: rgb(237, 237, 237);
     transform: rotate(20deg) translateY(-70%);
+    box-shadow: 5px 5px rgba(43, 22, 10, 0.35);
+}
+
+
+/* ==================== */
+/* SHEETS */
+/* ==================== */
+
+.piano-base button {
+    position: absolute;
+    top: -3em;
+    left: 50%;
+    transform: translateX(-50%);
 }

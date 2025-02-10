@@ -4,7 +4,7 @@ const puzzle2 = document.querySelector(".puzzle2")
 const dragElement = document.getElementById("drag-element");
 const goal = document.getElementById("drag-goal");
 const goalH1 = document.querySelector('#drag-goal h2');
-const nextButton = document.querySelector('#drag-goal button');
+const nextButtonPuzzle1 = document.querySelector('#drag-goal button');
 
 let collisionCount = 0;
 let offsetX
@@ -46,7 +46,7 @@ document.addEventListener("mousemove", (e) => {
             collisionCount++;
             goalH1.textContent = `${collisionCount}/5`;
             if (collisionCount === 5) {
-                nextButton.style.display = "block";
+                nextButtonPuzzle1.classList.remove("invisible");
             }
         }
     } else {
@@ -82,7 +82,7 @@ document.addEventListener("mouseup", () => {
     dragElement.style.cursor = "grab";
 });
 
-nextButton.addEventListener("click", (e) => {
+nextButtonPuzzle1.addEventListener("click", () => {
     puzzle1.classList.add("invisible");
     puzzle2.classList.remove("invisible");
 });
