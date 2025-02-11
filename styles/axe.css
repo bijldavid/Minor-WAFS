@@ -1,5 +1,13 @@
 .puzzle1 {
-    background-color: #ffe5b2;
+    background-color: #c1ffad;
+    overflow: hidden;
+}
+
+.puzzle1 button {
+    position: absolute;
+    top: 4em;
+    left: 50%;
+    transform: translateX(-50%);
 }
 
 .objective {
@@ -15,6 +23,8 @@
 }
 
 .tree {
+    --gehakt: 0;
+
     position: absolute;
     top: 60%;
     left: 66%;
@@ -29,11 +39,6 @@
     position: relative;
     width: 30px;
     height: 50px;
-}
-
-.goal button {
-    position: absolute;
-    right: -4em;
 }
 
 .goal h2 {
@@ -57,148 +62,141 @@
 .stem {
     position: relative;
     width: 30px;
-    background-image: linear-gradient(90deg, #6c3411 15%, #b15922 16%, #b15922 85%, #ffcbab 86%);
-    border: solid 3px black;
+    background-image: linear-gradient(90deg, #6c3411 15%, #b15922 16%, #b15922 85%, #e89865 86%);
 }
 
 .bottom-stem {
     height: 100px;
     border-top: none;
-    border-radius: 5px 5px 20px 20px;
+    border-radius: 0 0 20px 20px;
 }
 
 .top-stem {
     border-bottom: none;
     height: 300px;
-    animation: falling 2s linear infinite;
-    transform-origin: 15px 325px;
-    border-radius: 20px 20px 5px 5px;
+    animation: none;
+    transform-origin: 20px 325px;
+    border-radius: 20px 20px 0 0;
 }
 
 .branch {
     position: absolute;
-    background-image: linear-gradient(-180deg, #ffcbab 15%, #b15922 16%, #b15922 85%, #6c3411 86%);
+    background-image: linear-gradient(-180deg, #e89865 15%, #b15922 16%, #b15922 85%, #6c3411 86%);
     height: 15px;
     width: 150px;
 
 }
 
 .branch-right {
-    right: 33px;
+    right: 35px;
     transform: translate(100%, 50%) rotate(-50deg);
     bottom: 30%;
-    border: solid 3px black;
     border-left: none;
-    border-radius: 10px 10px 10px 0;
+    border-radius: 10px 10px 10px 10px;
 }
 
 .branch-left {
-    left: 33px;
+    left: 35px;
     transform: translateX(-100%) rotate(50deg);
     bottom: 57%;
-    border: solid 3px black;
     border-right: none;
-    border-radius: 10px 10px 0 10px;
+    border-radius: 10px 10px 10px 10px;
 }
 
-/* @keyframes falling {
+@keyframes falling {
     from {
       transform: rotate(0deg)
     }
     to {
-      transform: rotate(-30deg)
+      transform: rotate(-70deg)
     }
-  } */
+  }
 
 .leaves {
     position: absolute;
     border-radius: 50%;
-    outline: solid 3px black
 }
 
 .leaves-right {
+    position: relative;
     width: 200px;
     height: 250px;
-    background-image: linear-gradient(45deg, #469867 40.9%, #64bc89 41%);
-    right: -7em;
+    background-color: #469867;
+    right: -5em;
     top: 100%;
     transform: translateY(-50%) rotate(50deg);
 }
 
+.leaves-right::before {
+    content: '';
+    position: absolute;
+    border-radius: 50%;
+    width: 200px;
+    height: 230px;
+    top: 0;
+    background-color: #64bc89;
+}
+
 .leaves-left {
+    position: relative;
     width: 140px;
     height: 180px;
-    background-image: linear-gradient(45deg, #469867 40.9%, #64bc89 41%);
+    background-color: #469867;
     left: -4em;
     top: 100%;
     transform: translateY(-50%) rotate(-50deg);
 }
 
+.leaves-left::before {
+    content: '';
+    position: absolute;
+    border-radius: 50%;
+    width: 140px;
+    height: 165px;
+    top: 0;
+    background-color: #64bc89;
+}
+
 .leaves-main {
+    position: relative;
     width: 250px;
     height: 280px;
-    background-image: linear-gradient(45deg, #64bc89 40.9%, #7dcf9f 41%);
+    background-color: #3a7e57;
     left: 50%;
     top: 5em;
     transform: translate(-50%, -100%);
 }
 
+.leaves-main::before {
+    content: '';
+    position: absolute;
+    border-radius: 50%;
+    width: 250px;
+    height: 260px;
+    top: 0;
+    background-color: #4a956b;
+}
+
 .top-stem::before {
-    box-sizing: content-box;
     z-index: 2;
     position: absolute;
     content: "";
     bottom: 0;
-    transform: translateY(100%) scale(0.8);
-
-    width: 5px;
-    height: 0;
-    border-left: 15px solid transparent;
-    border-right: 10px solid transparent;
-    border-top: 25px solid #ffcb64;
-}
-
-.top-stem::after {
-    box-sizing: content-box;
-    z-index: 1;
-    position: absolute;
-    content: "";
-    bottom: 0;
-    transform: translateY(100%) scale(1.15);
-
-    width: 5px;
-    height: 0;
-    border-left: 15px solid transparent;
-    border-right: 10px solid transparent;
-    border-top: 25px solid black;
+    height: 25px;
+    width: 30px;
+    background-color: #ffd88a;
+    transform: translateY(100%);
+    clip-path: polygon(100% 0, 90% 100%, calc(25% + calc(var(--gehakt) * 8%)) 100%, 0 0);
 }
 
 .bottom-stem::before {
-    box-sizing: content-box;
     z-index: 2;
     position: absolute;
     content: "";
     top: 0;
-    transform: translateY(-100%) scale(0.8);
-
-    width: 5px;
-    height: 0;
-    border-left: 15px solid transparent;
-    border-right: 10px solid transparent;
-    border-bottom: 25px solid #ffcb64;
-}
-
-.bottom-stem::after {
-    box-sizing: content-box;
-    z-index: 1;
-    position: absolute;
-    content: "";
-    top: 0;
-    transform: translateY(-100%) scale(1.15);
-
-    width: 5px;
-    height: 0;
-    border-left: 15px solid transparent;
-    border-right: 10px solid transparent;
-    border-bottom: 25px solid black;
+    height: 25px;
+    width: 30px;
+    background-color: #ffd88a;
+    transform: translateY(-100%);
+    clip-path: polygon(90% 0, 100% 100%, 0 100%, calc(25% + calc(var(--gehakt) * 8%)) 0);
 }

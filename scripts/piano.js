@@ -1,6 +1,6 @@
 const nextButtonPuzzle2 = document.querySelector(".piano-base button");
 
-const correctSequence = [ "key1", "key2", "key3" ];
+const correctSequence = [ "key1", "key3", "key4", "key3", "key3" ];
 let userInput = [];
 
 document.querySelectorAll(".key").forEach((key) => {

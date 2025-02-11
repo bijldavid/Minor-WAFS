@@ -1,10 +1,13 @@
-const puzzle1 = document.querySelector(".puzzle1")
-const puzzle2 = document.querySelector(".puzzle2")
+const puzzle1 = document.querySelector('.puzzle1')
+const puzzle2 = document.querySelector('.puzzle2')
+const nextButtonPuzzle1 = document.querySelector('.puzzle1 button');
 
-const dragElement = document.getElementById("drag-element");
-const goal = document.getElementById("drag-goal");
+const dragElement = document.getElementById('drag-element');
+const goal = document.getElementById('drag-goal');
 const goalH1 = document.querySelector('#drag-goal h2');
-const nextButtonPuzzle1 = document.querySelector('#drag-goal button');
+
+const tree = document.querySelector('.tree')
+const topStem = document.querySelector('.top-stem');
 
 let collisionCount = 0;
 let offsetX
@@ -44,9 +47,12 @@ document.addEventListener("mousemove", (e) => {
         if (!isColliding && collisionCount < 5) {
             isColliding = true;
             collisionCount++;
+            tree.style.setProperty('--gehakt', collisionCount);
             goalH1.textContent = `${collisionCount}/5`;
             if (collisionCount === 5) {
+                topStem.style.animation = 'falling 2s linear forwards'
                 nextButtonPuzzle1.classList.remove("invisible");
+
             }
         }
     } else {
