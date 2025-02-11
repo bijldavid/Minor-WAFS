@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="styles/general.css">
     <link rel="stylesheet" href="styles/axe.css">
     <link rel="stylesheet" href="styles/piano.css">
+    <link rel="stylesheet" href="styles/about-me.css">
     <title>WAFS David</title>
 </head>
 
@@ -45,7 +46,7 @@
 
 
 
-        <div class="puzzle puzzle2">
+        <div class="puzzle puzzle2 invisible">
             <div class="room">
                 <div class="desk">
                     <div class="mug">
@@ -119,14 +120,37 @@
         </div>
 
         <div class="about-me">
-
+            <img src="images/davidvectorart.png" alt="">
+            <div class="left-right">
+                <div class="up-down">
+                    <div>
+                        <h2>Titel</h2>
+                        <p>Kleine ondertekst</p>
+                    </div>
+                </div>
+            </div>
         </div>
     </main>
 
     <footer></footer>
     <script src="scripts/axe.js"></script>
     <script src="scripts/piano.js"></script>
+    <script src="scripts/about-me.js"></script>
+    <script src="scripts/api.js" type="module"></script>
 
+
+    <!-- coole outline feature -->
+    <!-- ↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓ -->
+    <!-- <svg >
+        <filter id="outline">
+            <feMorphology in="SourceAlpha" result="DILATED" operator="dilate" radius="3"></feMorphology>
+    
+            <feMerge>
+                <feMergeNode in="DILATED" />
+                <feMergeNode in="SourceGraphic" />
+            </feMerge>
+        </filter>
+    </svg> -->
 </body>
 
 </html>
