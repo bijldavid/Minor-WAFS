@@ -14,8 +14,14 @@ const myPictureLR = document.querySelector('.my-picture');
 const myPictureUD = document.querySelector('.my-picture>div');
 const myPictureTextWrapper = document.querySelector('.my-picture>div div');
 
-const distanceAgeLeft = myAgeUD.getBoundingClientRect().left;
-document.documentElement.style.setProperty('--distance', `${distanceAgeLeft}px`);
+function updateDistance() {
+    const distanceAgeLeft = myAgeUD.getBoundingClientRect().left;
+    document.documentElement.style.setProperty('--distance', `${distanceAgeLeft}px`);
+}
+
+window.addEventListener('resize', updateDistance);
+
+
 
 let isAnimating = {
     myName: false,

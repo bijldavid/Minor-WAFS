@@ -23,4 +23,5 @@ document.querySelectorAll(".key").forEach((key) => {
 nextButtonPuzzle2.addEventListener("click", () => {
     puzzle2.classList.add("invisible");
     aboutMe.classList.remove("invisible");
+    updateDistance();
 });
