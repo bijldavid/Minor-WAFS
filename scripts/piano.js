@@ -1,4 +1,5 @@
 const nextButtonPuzzle2 = document.querySelector(".piano-base button");
+const aboutMe = document.querySelector('.about-me');
 
 const correctSequence = [ "key1", "key3", "key4", "key3", "key3" ];
 let userInput = [];
@@ -16,4 +17,10 @@ document.querySelectorAll(".key").forEach((key) => {
             nextButtonPuzzle2.classList.remove("invisible");
         }
     });
+});
+
+
+nextButtonPuzzle2.addEventListener("click", () => {
+    puzzle2.classList.add("invisible");
+    aboutMe.classList.remove("invisible");
 });

@@ -2,7 +2,25 @@
     position: relative;
     width: 100vw;
     height: 100vh;
-    background-color: #f0e0ff;
+    background-color: #1e0f47;
+    overflow: hidden;
+}
+
+.about-me>div>div {
+    padding: 1rem;
+    border-radius: 25px;
+    width: 0px;
+  
+    display: grid;
+    grid-template-rows: 0fr;
+}
+
+.about-me>div>div>div {
+    overflow: hidden;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    gap: .5em;
 }
 
 .about-me img {
@@ -14,184 +32,76 @@
     height: auto;
 }
 
-.about-me>div>div {
+.my-name {
+    animation: none;
     position: absolute;
-    top: 4em;
-    left: 4em;
-    background-color: #c38ef4;
-    width: 50px;
-    height: 50px;
-    padding: 1em;
-    border-radius: 25px;
+    top: 25vh;
+    left: 25vw;
 }
 
-.about-me .left-right {
+.my-name>div {
     animation: none;
+    background-color: #2229dd;
 }
 
-.about-me .up-down {
-    animation: none;
-}
-
-.about-me .up-down div {
+.my-name>div div {
     opacity: 0;
     animation: none;
 }
 
-@keyframes x {
-    0% {
-        transform: translate(0, 0);
-    }
-
-    100% {
-        transform: translate(calc(50vw - 150px - 4em), 0);
-    }
+.my-age {
+    animation: none;
+    position: absolute;
+    top: 65vh;
+    left: 25vw;
 }
 
-@keyframes reverse-x {
-    0% {
-        transform: translate(calc(50vw - 150px - 4em), 0);
-    }
-
-    100% {
-        transform: translate(0, 0)
-    }
+.my-age>div {
+    animation: none;
+    background-color: #d72f2f;
 }
 
-@keyframes y {
-    0% {
-        transform: translate(0, 0vh);
-    }
-
-    10% {
-        transform: translate(0, 4vh);
-    }
-
-    20% {
-        transform: translate(0, 12vh);
-    }
-
-    30% {
-        transform: translate(0, 20vh);
-    }
-
-    40% {
-        transform: translate(0, 26vh);
-    }
-
-    50% {
-        transform: translate(0, 30vh);
-    }
-
-    60% {
-        transform: translate(0, 32vh);
-    }
-
-    70% {
-        transform: translate(0, 33vh);
-    }
-
-    80% {
-        transform: translate(0, 33.5vh);
-    }
-
-    90% {
-        transform: translate(0, 33.8vh);
-    }
-
-    100% {
-        transform: translate(0, 34vh);
-    }
+.my-age>div div {
+    opacity: 0;
+    animation: none;
 }
 
-@keyframes reverse-y {
-    0% {
-        transform: translate(0, 34vh);
-    }
-
-    10% {
-        transform: translate(0, 33.8vh);
-    }
-
-    20% {
-        transform: translate(0, 33.5vh);
-    }
-
-    30% {
-
-        transform: translate(0, 33vh);
-    }
-
-    40% {
-        transform: translate(0, 32vh);
-    }
-
-    50% {
-        transform: translate(0, 30vh);
-    }
-
-    60% {
-        transform: translate(0, 26vh);
-    }
-
-    70% {
-        transform: translate(0, 20vh);
-    }
-
-    80% {
-        transform: translate(0, 12vh);
-    }
-
-    90% {
-        transform: translate(0, 4vh);
-    }
-
-    100% {
-        transform: translate(0, 0vh);
-    }
+.my-goals {
+    animation: none;
+    position: absolute;
+    top: 65vh;
+    right: 25vw;
 }
 
-
-@keyframes small-to-wide {
-    from {
-        width: 50px;
-        height: 50px;
-        border-radius: 25px;
-    }
-    to {
-        width: 300px;
-        height: 100px;
-        border-radius: 10px;
-    }
+.my-goals>div {
+    animation: none;
+    background-color: #e4ce3a;
 }
 
-@keyframes reverse-small-to-wide {
-    from {
-        width: 300px;
-        height: 100px;
-        border-radius: 10px;
-    }
-    to {
-        width: 50px;
-        height: 50px;
-        border-radius: 25px;
-    }
+.my-goals>div div {
+    opacity: 0;
+    animation: none;
 }
 
-@keyframes opacity {
-    from {
-        opacity: 0;
-    }
-    to {
-        opacity: 1;
-    }
+.my-picture {
+    animation: none;
+    position: absolute;
+    top: 25vh;
+    right: 25vw;
 }
 
-@keyframes reverse-opacity {
-    from {
-        opacity: 1;
-    }
-    to {
-        opacity: 0;
-    }
+.my-picture>div {
+    animation: none;
+    background-color: #1acd41;
+}
+
+.my-picture>div div {
+    opacity: 0;
+    animation: none;
+}
+
+.my-picture>div div img {
+    height: 100px;
+    width: auto;
+    border-radius: 50%;
 }

@@ -5,9 +5,11 @@
 
 .puzzle1 button {
     position: absolute;
-    top: 4em;
-    left: 50%;
+    top: 10em;
+    left: 66%;
     transform: translateX(-50%);
+    color: #fff7e3;
+    background-color: #830f0f;
 }
 
 .objective {
@@ -30,7 +32,7 @@
     left: 66%;
     transform: translate(-50%, -50%);
 
-    filter:url(#outline);
+    /* filter:url(#outline); */
 }
 
 .tree * {
